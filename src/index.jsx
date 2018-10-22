@@ -9,7 +9,6 @@ const store = getStore();
 const fetchDataForLocation = location=>{
     store.dispatch({type:`REQUEST_FETCH_QUESTIONS`})
 };
-
 const render = (_App)=>{
     ReactDOM.render(
         <Provider store={store}>
@@ -18,6 +17,13 @@ const render = (_App)=>{
         document.getElementById("AppContainer")
     )
 };
+
+if (module.hot) {
+    module.hot.accept('./App',()=>{
+        const NextApp = require('./App').default;
+        render(NextApp);
+    })
+}
 
 render(App);
 fetchDataForLocation();
