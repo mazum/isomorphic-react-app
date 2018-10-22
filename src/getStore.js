@@ -2,7 +2,7 @@ import { createStore, combineReducers,applyMiddleware } from 'redux';
 import { identity } from 'lodash';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
-import fetchQuestionsSaga from './sagas/fetch-questions.saga';
+import fetchQuestionsSaga from './sagas/fetch-questions-saga';
 import * as reducers from './reducers';
 
 export default function(defaultState = {}){
